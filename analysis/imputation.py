@@ -18,7 +18,8 @@ def columns_define(df, name_id="id", name_target="target", name_cat="_cat", name
     columns_all.remove(column_id)
     columns_all.remove(column_target)
     for r in to_remove:
-        columns_all.remove(r)
+        if r in columns_all:
+            columns_all.remove(r)
 
     for c in columns_all:
         if name_cat in c:
